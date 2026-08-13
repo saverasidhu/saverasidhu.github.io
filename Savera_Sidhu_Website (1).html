@@ -3,69 +3,1220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Savera Sidhu</title>
+
+<title>Savera Sidhu | Psychology, Youth Advocacy & Leadership</title>
+
 <style>
-body{font-family:Arial,sans-serif;line-height:1.6;margin:0;color:#222}
-header{padding:80px 10%;background:#f5f7fb}
-h1{font-size:3rem;margin:0}
-.tag{font-size:1.2rem;margin-top:10px}
-section{padding:50px 10%}
-.card{background:#fafafa;padding:20px;border-radius:12px;margin:15px 0}
-footer{padding:30px 10%;background:#f5f7fb}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #172033;
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e8ebf0;
+}
+
+.nav-inner {
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.9rem;
+    color: #596274;
+}
+
+.nav-links a:hover {
+    color: #172033;
+}
+
+/* HERO */
+
+.hero {
+    padding: 110px 0 100px;
+    background: linear-gradient(135deg, #f7f9fc 0%, #eef3f8 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(3.2rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #536d8a;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #536071;
+    max-width: 720px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 21px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid #172033;
+}
+
+.button.primary {
+    background: #172033;
+    color: white;
+}
+
+.button.secondary {
+    background: white;
+}
+
+/* PROFILE CARD */
+
+.profile-card {
+    background: white;
+    border: 1px solid #e4e8ee;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 20px 50px rgba(30,45,70,0.08);
+}
+
+.profile-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #dce5ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.profile-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+}
+
+.profile-card p {
+    color: #697386;
+    font-size: 0.92rem;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 95px 0;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.72rem;
+    color: #718096;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    max-width: 750px;
+    color: #647084;
+    font-size: 1.05rem;
+    margin-bottom: 45px;
+}
+
+/* IMPACT */
+
+.impact {
+    background: #172033;
+    color: white;
+}
+
+.impact .section-label {
+    color: #aeb9c8;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+
+.metric {
+    padding: 25px 0;
+    border-top: 1px solid #465064;
+}
+
+.metric-number {
+    font-size: 2.7rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.metric-label {
+    color: #b7c0ce;
+    font-size: 0.9rem;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #596579;
+}
+
+.focus-list {
+    display: grid;
+    gap: 15px;
+}
+
+.focus-item {
+    padding: 20px;
+    border-left: 3px solid #8297ae;
+    background: #f7f8fa;
+}
+
+.focus-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* FEATURED PROJECT */
+
+.featured {
+    background: #f6f8fb;
+}
+
+.project-card {
+    background: white;
+    border: 1px solid #e1e6ed;
+    border-radius: 18px;
+    padding: 45px;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.project-name {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.project-tag {
+    color: #697586;
+}
+
+.project-description {
+    max-width: 850px;
+    color: #596579;
+    margin-bottom: 30px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+
+.project-stat {
+    padding: 20px;
+    background: #f7f8fa;
+    border-radius: 10px;
+}
+
+.project-stat strong {
+    display: block;
+    font-size: 1.5rem;
+}
+
+/* EXPERIENCE */
+
+.timeline {
+    border-left: 2px solid #dce2e9;
+    margin-left: 8px;
+}
+
+.timeline-item {
+    padding: 0 0 45px 35px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #536d8a;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    color: #7a8495;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    font-weight: 750;
+    margin: 4px 0;
+}
+
+.timeline-org {
+    color: #536d8a;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    color: #657083;
+    max-width: 800px;
+}
+
+/* LEADERSHIP */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+}
+
+.card {
+    border: 1px solid #e2e6ec;
+    border-radius: 13px;
+    padding: 25px;
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(30,40,60,0.07);
+}
+
+.card h3 {
+    margin-bottom: 7px;
+}
+
+.card p {
+    color: #687386;
+    font-size: 0.92rem;
+}
+
+/* AWARDS */
+
+.awards {
+    background: #f7f8fa;
+}
+
+.award-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+}
+
+.award {
+    padding: 22px;
+    background: white;
+    border: 1px solid #e1e5eb;
+    border-radius: 10px;
+}
+
+.award strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.award span {
+    color: #748093;
+    font-size: 0.88rem;
+}
+
+/* MEDIA */
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.media-card {
+    border: 1px solid #e2e6eb;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.media-card small {
+    color: #758093;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.media-card h3 {
+    margin: 10px 0;
+}
+
+.media-card p {
+    color: #697386;
+    font-size: 0.9rem;
+}
+
+/* VISION */
+
+.vision {
+    background: #eef2f6;
+}
+
+.vision-text {
+    font-size: 2rem;
+    line-height: 1.4;
+    max-width: 900px;
+    letter-spacing: -0.8px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #172033;
+    color: white;
+    padding: 65px 0;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+footer p {
+    color: #aeb7c5;
+    margin-top: 8px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    color: #dce2e9;
+}
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .hero-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .cards,
+    .award-grid,
+    .media-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-top {
+        flex-direction: column;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+    }
+}
+
 </style>
 </head>
+
 <body>
-<header>
-<h1>Savera Sidhu</h1>
-<p class="tag">Psychology & Criminology Student | Youth Advocate | Karate NZ Judge | Aspiring Lawyer</p>
-<p>Creating impact at the intersection of youth wellbeing, education, technology, and public policy.</p>
+
+<nav>
+    <div class="container nav-inner">
+        <div class="logo">SAVERA SIDHU</div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#leadership">Leadership</a>
+            <a href="#awards">Recognition</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+    <div class="container hero-grid">
+
+        <div>
+            <div class="eyebrow">Psychology · Advocacy · Leadership</div>
+
+            <h1>
+                Savera<br>
+                <span>Sidhu.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Psychology & Criminology student at the University of Auckland,
+                youth advocate, founder, and Karate New Zealand judge.
+                Building at the intersection of psychology, youth wellbeing,
+                technology, policy, and social change.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="button primary" href="#work">Explore my work</a>
+                <a class="button secondary" href="#contact">Get in touch</a>
+            </div>
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-circle">
+                SS
+            </div>
+
+            <h3>Psychology & Criminology</h3>
+
+            <p>
+                University of Auckland
+            </p>
+
+            <br>
+
+            <p>
+                Founder of Bright Start · 5Rights Youth Council ·
+                Girl Rising Girls Advisory Council ·
+                Karate New Zealand Judge
+            </p>
+
+        </div>
+
+    </div>
 </header>
 
-<section>
-<h2>About Me</h2>
-<p>I am a Psychology and Criminology student at the University of Auckland who entered university a year early. My work spans youth advocacy, mental health promotion, AI governance, and leadership development. I am passionate about ensuring young people have a meaningful voice in the decisions that shape their futures.</p>
+
+<!-- IMPACT -->
+
+<section class="impact">
+
+    <div class="container">
+
+        <div class="section-label">Impact at a glance</div>
+
+        <div class="impact-grid">
+
+            <div class="metric">
+                <div class="metric-number">160+</div>
+                <div class="metric-label">rangatahi reached through Bright Start workshops</div>
+            </div>
+
+            <div class="metric">
+                <div class="metric-number">1,200+</div>
+                <div class="metric-label">signatures supporting preventative wellbeing education</div>
+            </div>
+
+            <div class="metric">
+                <div class="metric-number">49</div>
+                <div class="metric-label">countries represented in the Me & AI report</div>
+            </div>
+
+            <div class="metric">
+                <div class="metric-number">27+</div>
+                <div class="metric-label">countries represented at the Asia Pacific Karate Championships</div>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-<h2>Highlights</h2>
-<div class="card">🏆 Y25 Winner (YWCA 2026)</div>
-<div class="card">🥋 1st Dan Black Belt & International Karate Competitor</div>
-<div class="card">🎓 Statistics Department Certificate of Distinction</div>
-<div class="card">🌏 Contributor to international youth advocacy initiatives</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">About</div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h2 class="section-title">
+                    Building a career around people, systems and impact.
+                </h2>
+
+                <p>
+                    I am a Psychology and Criminology student at the University
+                    of Auckland with a strong interest in the relationship
+                    between people, institutions, technology and social change.
+                </p>
+
+                <p>
+                    My work has taken me from youth wellbeing workshops in
+                    schools to international conversations on children's
+                    digital rights and AI governance. Across these experiences,
+                    I have become particularly interested in how evidence,
+                    policy and advocacy can work together to create better
+                    outcomes for young people.
+                </p>
+
+                <p>
+                    Alongside advocacy and university, I have developed
+                    leadership through competitive karate, public speaking,
+                    debating, education, and community service.
+                </p>
+
+                <p>
+                    I am particularly interested in the future intersection
+                    of psychology, criminology and law.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="section-label">Areas of interest</div>
+
+                <div class="focus-list">
+
+                    <div class="focus-item">
+                        <strong>Youth Wellbeing</strong>
+                        Prevention, resilience, confidence and accessible
+                        wellbeing education.
+                    </div>
+
+                    <div class="focus-item">
+                        <strong>Technology & AI Governance</strong>
+                        Children's digital rights, AI literacy and youth
+                        participation in technology policy.
+                    </div>
+
+                    <div class="focus-item">
+                        <strong>Psychology & Research</strong>
+                        Understanding behaviour and using evidence to improve
+                        real-world outcomes.
+                    </div>
+
+                    <div class="focus-item">
+                        <strong>Law & Public Policy</strong>
+                        Exploring how legal and policy systems can promote
+                        fairness, protection and social change.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-<h2>Leadership & Service</h2>
-<ul>
-<li>Secretary, Whau Youth Board</li>
-<li>5Rights Youth Council Member</li>
-<li>Girl Rising Girls Advisory Council</li>
-<li>TEDx University of Auckland Curation Team</li>
-<li>Events Lead, Craccum Magazine</li>
-<li>ZNotes Wellbeing Officer</li>
-</ul>
+
+<!-- BRIGHT START -->
+
+<section id="work" class="featured">
+
+    <div class="container">
+
+        <div class="section-label">Featured initiative</div>
+
+        <div class="project-card">
+
+            <div class="project-top">
+
+                <div>
+                    <div class="project-name">Bright Start</div>
+                    <div class="project-tag">
+                        Founder & Executive Director · Youth Wellbeing
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="project-description">
+                Bright Start is a youth wellbeing initiative focused on
+                equipping young people with practical tools for confidence,
+                resilience and emotional wellbeing. The initiative was built
+                around a simple principle: young people should receive support
+                before problems become crises.
+            </p>
+
+            <div class="project-grid">
+
+                <div class="project-stat">
+                    <strong>160+</strong>
+                    Rangatahi reached through workshops.
+                </div>
+
+                <div class="project-stat">
+                    <strong>1,200+</strong>
+                    Signatures supporting preventative mental health education.
+                </div>
+
+                <div class="project-stat">
+                    <strong>15-page</strong>
+                    Educator toolkit developed to support wellbeing education.
+                </div>
+
+                <div class="project-stat">
+                    <strong>Global</strong>
+                    Featured through international youth storytelling and
+                    advocacy platforms.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-<h2>Featured Project: Bright Start</h2>
-<p>Bright Start is a youth wellbeing initiative focused on equipping young people with practical tools for resilience and mental wellbeing.</p>
-<ul>
-<li>160+ rangatahi reached through workshops</li>
-<li>1,200+ petition signatures supporting preventative mental health education</li>
-<li>42% reduction in stress reported by participants</li>
-<li>58% increase in confidence reported by participants</li>
-</ul>
-</section>
+
+<!-- EXPERIENCE -->
 
 <section>
-<h2>Vision</h2>
-<p>My goal is to combine psychology, law, and public policy to create evidence-based solutions that improve outcomes for young people. Whether through research, advocacy, or legal practice, I hope to contribute to a future where every young person has the opportunity to thrive.</p>
+
+    <div class="container">
+
+        <div class="section-label">Experience</div>
+
+        <h2 class="section-title">Selected experience</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">2026 — Present</div>
+
+                <div class="timeline-title">
+                    Academic Tutor
+                </div>
+
+                <div class="timeline-org">
+                    Tutoring for Excellence
+                </div>
+
+                <p>
+                    Supporting primary and secondary students through
+                    personalised academic learning, including Cambridge
+                    learners, while adapting teaching strategies to individual
+                    learning needs and goals.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">2026 — Present</div>
+
+                <div class="timeline-title">
+                    Notes Contributor
+                </div>
+
+                <div class="timeline-org">
+                    ZNotes
+                </div>
+
+                <p>
+                    Developing syllabus-aligned revision resources and quizzes
+                    for Cambridge Psychology, translating complex psychological
+                    concepts into clear and accessible learning materials.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">2025 — Present</div>
+
+                <div class="timeline-title">
+                    Youth Council Member & Youth Ambassador
+                </div>
+
+                <div class="timeline-org">
+                    5Rights Foundation
+                </div>
+
+                <p>
+                    Contributing youth perspectives to international work on
+                    children's digital rights, AI governance, online safety
+                    and technology policy. Contributed to the Me & AI initiative
+                    and international youth advocacy surrounding UNCRC General
+                    Comment No. 25.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">2026 — Present</div>
+
+                <div class="timeline-title">
+                    Executive Team Member — Curation
+                </div>
+
+                <div class="timeline-org">
+                    TEDxUoA
+                </div>
+
+                <p>
+                    Supporting speaker research, idea development and narrative
+                    refinement to help shape a programme of thought-provoking
+                    talks.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">2026 — Present</div>
+
+                <div class="timeline-title">
+                    Core Board Member & Secretary
+                </div>
+
+                <div class="timeline-org">
+                    Whau Youth Board
+                </div>
+
+                <p>
+                    Supporting youth voice and representation through board
+                    administration, meeting coordination, agendas, minutes,
+                    communications and community initiatives.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">2025 — Present</div>
+
+                <div class="timeline-title">
+                    Girls Advisory Council Member
+                </div>
+
+                <div class="timeline-org">
+                    Girl Rising
+                </div>
+
+                <p>
+                    Contributing youth perspectives to global education and
+                    advocacy initiatives supporting girls' empowerment,
+                    including curriculum refinement and international campaigns.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<footer>
-<h2>Contact</h2>
-<p>Connect via LinkedIn or email.</p>
-<p>© Savera Sidhu</p>
+
+<!-- LEADERSHIP -->
+
+<section id="leadership" class="featured">
+
+    <div class="container">
+
+        <div class="section-label">Leadership & service</div>
+
+        <h2 class="section-title">
+            Beyond the classroom.
+        </h2>
+
+        <p class="section-intro">
+            Leadership has been a consistent part of my journey, spanning
+            youth advocacy, education, sport, public speaking and community
+            engagement.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Bright Start</h3>
+                <p>
+                    Founder & Executive Director of a youth wellbeing initiative
+                    focused on prevention, confidence and resilience.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>5Rights Youth Council</h3>
+                <p>
+                    Global youth advocacy focused on children's digital rights,
+                    online safety and responsible AI governance.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Girl Rising</h3>
+                <p>
+                    Member of an international Girls Advisory Council informing
+                    education and empowerment initiatives.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Whau Youth Board</h3>
+                <p>
+                    Core Board Member and Secretary supporting youth-led
+                    community initiatives and representation.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>TEDxUoA</h3>
+                <p>
+                    Executive Curation Team member helping develop speakers,
+                    ideas and narratives for TEDxUoA.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Karate New Zealand</h3>
+                <p>
+                    Karate New Zealand Judge and 1st Dan Black Belt with
+                    international competitive experience representing
+                    New Zealand.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Debating</h3>
+                <p>
+                    Debate leader, coach and adjudicator with experience
+                    developing speakers and evaluating competitive arguments.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Education</h3>
+                <p>
+                    Academic tutor and educational content contributor focused
+                    on making learning clearer and more accessible.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RECOGNITION -->
+
+<section id="awards" class="awards">
+
+    <div class="container">
+
+        <div class="section-label">Recognition</div>
+
+        <h2 class="section-title">Selected achievements.</h2>
+
+        <div class="award-grid">
+
+            <div class="award">
+                <strong>Certificate of Distinction — STATS 101</strong>
+                <span>Department of Statistics · University of Auckland · 2026</span>
+            </div>
+
+            <div class="award">
+                <strong>Y25 Winner</strong>
+                <span>YWCA New Zealand · 2026</span>
+            </div>
+
+            <div class="award">
+                <strong>GirlBoss Edge Healthcare Scholar</strong>
+                <span>GirlBoss New Zealand · 2026</span>
+            </div>
+
+            <div class="award">
+                <strong>Duke of Edinburgh's Hillary Gold Award</strong>
+                <span>Gold Award · 2025</span>
+            </div>
+
+            <div class="award">
+                <strong>Whau Youth Awards — Sports Excellence</strong>
+                <span>Grand Winner · 2025</span>
+            </div>
+
+            <div class="award">
+                <strong>Silver Achievement Award — WeVoi Spark</strong>
+                <span>Global Youth Speaking Competition · 2025</span>
+            </div>
+
+            <div class="award">
+                <strong>Asia Pacific Shitoryu Karatedo Championships</strong>
+                <span>5th Place · Singapore · 2024</span>
+            </div>
+
+            <div class="award">
+                <strong>National Winner — Young Reporters for the Environment</strong>
+                <span>New Zealand · 2023</span>
+            </div>
+
+            <div class="award">
+                <strong>Senior Open Auckland Schools' Debating</strong>
+                <span>4th Place out of 120 teams · 2025</span>
+            </div>
+
+            <div class="award">
+                <strong>Cambridge Academic Excellence</strong>
+                <span>5 A/A* grades at IGCSE level</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED MEDIA -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">Featured</div>
+
+        <h2 class="section-title">Selected media & public work.</h2>
+
+        <p class="section-intro">
+            A selection of conversations, publications and international
+            initiatives that have shaped my work.
+        </p>
+
+        <div class="media-grid">
+
+            <div class="media-card">
+                <small>International Advocacy</small>
+                <h3>Me & AI Global Report</h3>
+                <p>
+                    Contributed youth perspectives to an international initiative
+                    examining children's experiences and recommendations around
+                    AI and digital technology.
+                </p>
+            </div>
+
+            <div class="media-card">
+                <small>Youth Story</small>
+                <h3>Peace First — Savera's Story</h3>
+                <p>
+                    Featured in an international youth story exploring the
+                    journey behind Bright Start and preventative youth wellbeing.
+                </p>
+            </div>
+
+            <div class="media-card">
+                <small>Podcast</small>
+                <h3>From Bullying to Advocacy</h3>
+                <p>
+                    Discussed resilience, youth mental health, advocacy and the
+                    journey from competitive karate into community impact.
+                </p>
+            </div>
+
+            <div class="media-card">
+                <small>UNCRC</small>
+                <h3>General Comment No. 25</h3>
+                <p>
+                    Contributed a youth perspective to international discussion
+                    surrounding children's rights in the digital environment.
+                </p>
+            </div>
+
+            <div class="media-card">
+                <small>Journalism</small>
+                <h3>Young Reporters for the Environment</h3>
+                <p>
+                    Produced award-winning environmental journalism following
+                    independent research into Auckland's food waste system.
+                </p>
+            </div>
+
+            <div class="media-card">
+                <small>Sport</small>
+                <h3>International Karate</h3>
+                <p>
+                    Represented New Zealand internationally and later developed
+                    into a Karate New Zealand judge and sports leader.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VISION -->
+
+<section class="vision">
+
+    <div class="container">
+
+        <div class="section-label">Looking ahead</div>
+
+        <p class="vision-text">
+            I want to build a career where psychology, law and public policy
+            meet — using evidence, advocacy and lived experience to help
+            create systems that are fairer, more preventative and more
+            responsive to young people.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<footer id="contact">
+
+    <div class="container footer-grid">
+
+        <div>
+            <h2>Let's connect.</h2>
+            <p>
+                For opportunities, collaborations, advocacy or academic work.
+            </p>
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/savera-sidhu/" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="mailto:ssid669@aucklanduni.ac.nz">
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
 </footer>
+
 </body>
 </html>
